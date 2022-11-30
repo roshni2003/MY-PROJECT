@@ -1,0 +1,41 @@
+<!DOCvTYPE html>
+<html>
+<head>
+<meta charset="urf-8">
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1">
+<link rel="stylsheet"
+type="text/css" href="stylsheet.css">
+<title>Chatbox</title>
+</head>
+<body>
+<div class="glass">
+<h1>Chatbox</h1>
+<div class="input">
+<input type="text" id="userBox"
+onkeydown="if(event.keyCode==13){
+talk()}"
+placeholder="Ask Any Question"/>   
+</div>
+<p id="chatLog">Response Here...</p>
+</div>
+<script>function talk(){
+var know={
+"Who are you?":"Hello, This is Roshni Here",
+"How are you":"I am fine!! What about about?",
+"I am Fine":"Nice To Hear!!",
+};
+var user=
+document.getElementById('userBox').value;
+document.getElementById('chatLog').innerHTML=user+"<br>";
+if(user in know){
+document.getElementById('chatLog').innerHTML=know[user]+"<br>";
+}
+else{
+document.getElementById('chatLog').innerHTML="Sorry, i didn't understand <br>";
+}
+}
+</script>    
+</body>
+</html>
